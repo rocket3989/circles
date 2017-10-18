@@ -13,11 +13,8 @@ function circle(posx,posy,radius,offset,vel,network){
 	}
 	this.show = function(){
 		ellipse(this.posx,this.posy,this.radius*2,this.radius*2);
-		strokeWeight(4);
-		point(this.pointx,this.pointy);
-		strokeWeight(1);
 		for(j = 0;j<this.network.length;j++){
 			line(this.pointx,this.pointy,circles[this.network[j]].pointx,circles[this.network[j]].pointy);
-	}
+		}
 	}
 }
