@@ -9,13 +9,16 @@ function setup() {
 	stroke(255);
 	noFill();
 	var network = [];
-	var length = 5;
-	var width = 5;
+	var length = 4;
+	var width = 4;
+	var radi = 200;
+	var spacing = 90;
+	var offset = 150;
 	for (i=1;i<(length*width);i++)
 		network.push(i);
 	for (i = 0;i<length;i++){
 		for (j=0;j<width;j++){
-			circles.push(new circle(100+100*j,100+100*i,50,0,0.01+.004*j-.003*i,network.slice()));
+			circles.push(new circle(spacing+spacing*j+offset,spacing+spacing*i+offset,radi,0,0.01+.001*j-.002*i,network.slice()));
 			network.splice(0,1);
 			}
 		}
