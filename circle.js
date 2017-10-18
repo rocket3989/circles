@@ -12,7 +12,9 @@ function circle(posx,posy,radius,offset,vel,network){
 		this.pointy = sin(this.vel*t+this.offset)*radius+posy;	
 	}
 	this.show = function(){
-		//ellipse(this.posx,this.posy,this.radius*2,this.radius*2);
+		stroke(100);
+		ellipse(this.posx,this.posy,this.radius*2,this.radius*2);
+		stroke(255);
 		for(j = 0;j<this.network.length;j++){
 			line(this.pointx,this.pointy,circles[this.network[j]].pointx,circles[this.network[j]].pointy);
 		}
