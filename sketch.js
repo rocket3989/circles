@@ -15,7 +15,7 @@ function setup() {
 		network.push(i);
 	for (i = 0;i<length;i++){
 		for (j=0;j<width;j++){
-			circles.push(new circle(50+50*j,50+50*i,20,0,0.01+.003*j-.003*i,network.slice()));
+			circles.push(new circle(100+100*j,100+100*i,50,0,0.01+.004*j-.003*i,network.slice()));
 			network.splice(0,1);
 			}
 		}
