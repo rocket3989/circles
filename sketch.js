@@ -9,8 +9,8 @@ function setup() {
 	stroke(255);
 	noFill();
 	var network = [];
-	var length = 4;
-	var width = 4;
+	var length = 3;
+	var width = 3;
 	var radi = 200;
 	var spacing = 90;
 	var offset = 150;
