@@ -9,8 +9,8 @@ function setup() {
 	stroke(255);
 	noFill();
 	var network = [];
-	var length = 10;
-	var width = 10;
+	var length = 5;
+	var width = 5;
 	for (i=1;i<(length*width);i++)
 		network.push(i);
 	for (i = 0;i<length;i++){
