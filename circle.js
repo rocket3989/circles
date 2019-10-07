@@ -1,22 +1,28 @@
-function circle(posx,posy,radius,offset,vel,network){
-	this.posx = posx;
-	this.posy = posy;
+function circle(posX, posY, radius, offset, vel, network){
+    
+    this.posX = posX;
+	this.posY = posY;
 	this.radius = radius;
 	this.offset = offset;
 	this.vel = vel;
-	this.pointx = 0;
-	this.pointy = 0;
-	this.network = network;
+	this.pointX = 0;
+	this.pointY = 0;
+    this.network = network;
+    
 	this.findPoint = function(){
-		this.pointx = cos(this.vel*t+this.offset)*radius+posx;
-		this.pointy = sin(this.vel*t+this.offset)*radius+posy;	
+		this.pointX = cos(this.vel * t + this.offset) * radius + posX;
+		this.pointY = sin(this.vel * t + this.offset) * radius + posY;	
 	}
-	this.show = function(){
-		stroke(100);
-		ellipse(this.posx,this.posy,this.radius*2,this.radius*2);
-		stroke(255);
+    
+    this.show = function(){
+		// ellipse(this.posX,this.posY,this.radius*2,this.radius*2);
+		
 		for(j = 0;j<this.network.length;j++){
-			line(this.pointx,this.pointy,circles[this.network[j]].pointx,circles[this.network[j]].pointy);
-		}
+            neighbor = circles[this.network[j]]
+            if ((neighbor.pointX - this.pointX) ** 2 + 
+                (neighbor.pointY - this.pointY) ** 2 < 20000)
+			    line(this.pointX, this.pointY,
+                 neighbor.pointX, neighbor.pointY);
+	    }
 	}
 }

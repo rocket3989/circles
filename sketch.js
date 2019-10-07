@@ -9,16 +9,21 @@ function setup() {
 	stroke(255);
 	noFill();
 	var network = [];
-	var length = 3;
-	var width = 3;
-	var radi = 200;
-	var spacing = 90;
+	var length = 8;
+	var width = 20;
+	var radius = 25;
+	var spacing = 60;
 	var offset = 150;
-	for (i=1;i<(length*width);i++)
+	for (i = 1; i < length * width; i++)
 		network.push(i);
-	for (i = 0;i<length;i++){
-		for (j=0;j<width;j++){
-			circles.push(new circle(spacing+spacing*j+offset,spacing+spacing*i+offset,radi,0,0.01+.001*j-.002*i,network.slice()));
+	for (i = 0; i < length; i++){
+		for (j = 0; j < width; j++){
+			circles.push(new circle(spacing + spacing * j + offset,
+                                    spacing + spacing * i + offset,
+                                    radius * ((j + width) / 6 ) + 10,
+                                    0,
+                                    (0.01 + .0001 * i + .0005 * j) * PI * 1,
+                                    network.slice()));
 			network.splice(0,1);
 			}
 		}
